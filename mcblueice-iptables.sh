@@ -43,9 +43,9 @@ ipset create cfip hash:ip
 
 # 下載 IP 列表並匯入到 ipset
 echo "下載 IP 列表..."
-curl -sSL https://raw.githubusercontent.com/blue5125/mcblueice-sh/refs/heads/master/ipset/mcstorm-ip.txt -o /tmp/mcstorm-ip.txt.txt
-curl -sSL https://raw.githubusercontent.com/blue5125/mcblueice-sh/refs/heads/master/ipset/taiwan-ip.txt -o /tmp/taiwan-ip.txt
-curl -sSL https://raw.githubusercontent.com/blue5125/mcblueice-sh/refs/heads/master/ipset/cloudflare-ip.txt -o /tmp/cloudflare-ip.txt
+curl -sSL https://raw.githubusercontent.com/blue5125/mcblueice-sh/refs/heads/main/ipset/mcstorm-ip.txt -o /tmp/mcstorm-ip.txt.txt
+curl -sSL https://raw.githubusercontent.com/blue5125/mcblueice-sh/refs/heads/main/ipset/taiwan-ip.txt -o /tmp/taiwan-ip.txt
+curl -sSL https://raw.githubusercontent.com/blue5125/mcblueice-sh/refs/heads/main/ipset/cloudflare-ip.txt -o /tmp/cloudflare-ip.txt
 
 # 匯入到 ipset
 for i in $(cat /tmp/mcstorm-ip.txt.txt ); do ipset -A mcstormip $i; done
@@ -54,7 +54,7 @@ for i in $(cat /tmp/cloudflare-ip.txt ); do ipset -A cfip $i; done
 
 
 # 刪除臨時檔案
-rm /tmp/mcstorm-ip.txt.txt
+rm /tmp/mcstorm-ip.txt
 rm /tmp/taiwan-ip.txt
 rm /tmp/cloudflare-ip.txt
 
