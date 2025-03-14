@@ -37,9 +37,9 @@ sysctl -p
 echo "創建 ipset 列表..."
 
 # 創建 ipset
-ipset create mcstormip hash:ip
-ipset create twip hash:ip
-ipset create cfip hash:ip
+ipset create mcstormip hash:net
+ipset create twip hash:net
+ipset create cfip hash:net
 
 # 下載 IP 列表並匯入到 ipset
 echo "下載 IP 列表..."
