@@ -77,16 +77,16 @@ iptables -A port1 -p udp --dport 19132 -j RETURN
 iptables -A port1 -j DROP
 
 iptables -N udp1
-iptables -A udp1 -p udp -m limit --limit 10/s --limit-burst 20 -j ACCEPT
+iptables -A udp1 -p udp -m limit --limit 30/s --limit-burst 60 -j ACCEPT
 iptables -A udp1 -p udp -j DROP
 
 iptables -N syn-flood1
 iptables -A syn-flood1 -p tcp --syn -m recent --set --name syn_limit
-iptables -A syn-flood1 -p tcp --syn -m recent --update --name syn_limit --seconds 60 --hitcount 20 -j DROP
+iptables -A syn-flood1 -p tcp --syn -m recent --update --name syn_limit --seconds 30 --hitcount 20 -j DROP
 iptables -A syn-flood1 -p tcp --syn -m recent --update --name syn_limit -j RETURN
 
 iptables -N syn-flood2
-iptables -A syn-flood2 -p tcp --syn -m limit --limit 20/s --limit-burst 40 -j ACCEPT
+iptables -A syn-flood2 -p tcp --syn -m limit --limit 30/s --limit-burst 60 -j ACCEPT
 iptables -A syn-flood2 -p tcp --syn -j DROP
 
 # 基本規則
