@@ -55,7 +55,7 @@ defaults
 listen minecraft
     bind *:25565-25570
     mode tcp
-    server mainserver SERVERIP send-proxy-v2
+    server mainserver 8.8.8.8 send-proxy-v2
 EOF
 
 # 重啟 HAProxy 使配置生效
