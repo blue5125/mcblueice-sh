@@ -6,15 +6,15 @@ sudo apt install -y wget curl unzip tar
 
 # 創建 JDK 安裝目錄
 JDK_DIR="/JDK"
-JDK_VERSION="jdk-21.0.2"
+JDK_VERSION="jdk-21.0.5"
 JDK_PATH="${JDK_DIR}/${JDK_VERSION}"
 
 echo "創建 JDK 目錄：$JDK_DIR"
 sudo mkdir -p $JDK_DIR
 sudo chmod 777 $JDK_DIR
 
-# 下載 OpenJDK 21.0.2（官方提供的 tar.gz 版本）
-echo "下載 OpenJDK 21.0.2..."
+# 下載 OpenJDK 21.0.5（官方提供的 tar.gz 版本）
+echo "下載 OpenJDK 21.0.5..."
 wget -O /tmp/openjdk21.tar.gz https://download.oracle.com/java/21/archive/jdk-21.0.5_linux-x64_bin.tar.gz
 
 # 解壓到指定目錄
