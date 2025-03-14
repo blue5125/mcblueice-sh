@@ -106,6 +106,9 @@ iptables -P OUTPUT ACCEPT
 
 # 儲存 iptables 規則
 echo "儲存規則..."
+mkdir /etc/iptables/
+touch /etc/ipset.conf
+touch /etc/iptables/rules.v4
 ipset save > /etc/ipset.conf
 iptables-save > /etc/iptables/rules.v4
 
