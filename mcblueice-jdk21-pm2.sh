@@ -40,7 +40,7 @@ javac -version
 # 安裝 Node.js 與 npm
 echo "安裝 Node.js 與 npm..."
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-sudo apt install -y nodejs
+sudo apt install -y nodejs npm
 
 # 安裝 pm2
 echo "安裝 PM2..."
